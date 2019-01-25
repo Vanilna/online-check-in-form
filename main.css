@@ -1,0 +1,16 @@
+body {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.panel {
+    max-width: 992px;
+    margin: 1% auto;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    .panel {
+        margin: 1% 3%;
+    }
+}
