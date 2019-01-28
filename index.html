@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
@@ -10,85 +10,131 @@
     <link rel="stylesheet" href="main.css">
 </head>
 
-<body class="conteiner">
-    <div class="personal-data panel panel-default">
-        <div class="panel-heading">Dane osobowę</div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label for="name">Imię</label>
-                    <input type="text" class="form-control" id="name" placeholder="Wprowadź imię" required>
+<body>
+    <main class="container">
+        <div class="row">
+            <img src="logo-sm.png" alt="logo hotelu" class="img-responsive logo">
+        </div>
+        <div class="personal-data panel panel-default">
+            <div class="panel-heading">Dane osobowę</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="name">Imię:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Wprowadź imię" required>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="surname">Nazwisko:</label>
+                        <input type="text" class="form-control" id="surname" placeholder="Wprowadź nazwisko" required>
+                    </div>
                 </div>
-                <div class="form-group col-sm-6">
-                    <label for="surname">Nazwisko</label>
-                    <input type="text" class="form-control" id="surname" placeholder="Wprowadź nazwisko" required>
+                <div class="row">
+                    <div class="form-group col-sm-5">
+                        <label for="passport">Nr. dowodu/paszportu:</label>
+                        <input type="text" class="form-control" id="passport" placeholder="Nr. dowodu">
+                    </div>
+                    <div class="form-group col-sm-7">
+                        <label for="tel">Numer telefonu:</label>
+                        <input type="tel" class="form-control" id="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{3}"
+                            placeholder="000 000 000">
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-sm-5">
-                    <label for="passport">Numer dowodu/paszportu</label>
-                    <input type="text" class="form-control" id="passport">
-                </div>
-                <div class="form-group col-sm-7">
-                    <label for="tel">Numer telefonu</label>
-                    <input type="tel" class="form-control" id="tel" pattern="[0-9]{3} [0-9]{3} [0-9]{3}" placeholder="000 000 000">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label for="mail">E-mail</label>
-                    <input type="email" class="form-control" id="mail" placeholder="jan.kowalczyk@domen.pl">
-                </div>
-                <div class="form-group col-sm-6">
-                    <label for="car">Nr. samochodu</label>
-                    <input type="text" class="form-control" id="car">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="mail">E-mail:</label>
+                        <input type="email" class="form-control" id="mail" placeholder="jan.kowalczyk@domen.pl">
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label for="car">Nr. samochodu:</label>
+                        <input type="text" class="form-control" id="car" placeholder="Nr. samochodu">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="adress panel panel-default">
-        <div class="panel-heading">Adres</div>
-        <div class="panel-body">
-            <div class="row">
-                <div class="form-group col-sm-6">
-                    <label for="str">Ulica</label>
-                    <input type="text" class="form-control" id="str" placeholder="ul. Kościuszki">
+        <div class="adress panel panel-default">
+            <div class="panel-heading">Adres:</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label for="str">Ulica:</label>
+                        <input type="text" class="form-control" id="str" placeholder="Wprowadź ulice">
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="nr-Bud">Nr. budynku:</label>
+                        <input type="text" class="form-control" id="nr-Bud" placeholder="00">
+                    </div>
+                    <div class="form-group col-sm-3">
+                        <label for="nr-Mieszkania">Nr. mieszkania:</label>
+                        <input type="text" class="form-control" id="nr-Mieszkania" placeholder="00">
+                    </div>
                 </div>
-                <div class="form-group col-sm-3">
-                    <label for="nr-Bud">Nr. budynku</label>
-                    <input type="text" class="form-control" id="nr-Bud" placeholder="00">
-                </div>
-                <div class="form-group col-sm-3">
-                    <label for="nr-Mieszkania">Nr. mieszkania</label>
-                    <input type="text" class="form-control" id="nr-Mieszkania" placeholder="00">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-sm-3">
-                    <label for="postal">Kod pocztowy</label>
-                    <input type="number" class="form-control" id="postal" pattern="[0-9]{2}-[0-9]{3}" placeholder="00-000">
-                </div>
-                <div class="form-group col-sm-5">
-                    <label for="city">Miasto/Miejscowość</label>
-                    <input type="text" class="form-control" id="city" placeholder="Miasto">
-                </div>
-                <div class="form-group col-sm-7">
-                    <label for="country">Kraj</label>
-                    <input type="text" class="form-control" id="country" placeholder="Kraj">
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group col-sm-5">
-                    <label for="NIP">NIP</label>
-                    <input type="number" class="form-control" pattern="[0-9]{10}" placeholder="0000000000">
-                </div>
-                <div class="form-group col-sm-7">
-                    <label for="remarks">Uwagi do faktury</label>
-                    <input type="text" class="form-control" pattern="[A-za-z]{52}" placeholder="Uwagi na życzenie...">
+                <div class="row">
+                    <div class="form-group col-sm-3">
+                        <label for="postal">Kod pocztowy:</label>
+                        <input type="number" class="form-control" id="postal" pattern="[0-9]{2}-[0-9]{3}" placeholder="00-000">
+                    </div>
+                    <div class="form-group col-sm-5">
+                        <label for="city">Miasto:</label>
+                        <input type="text" class="form-control" id="city" placeholder="Miasto">
+                    </div>
+                    <div class="form-group col-sm-7">
+                        <label for="country">Kraj:</label>
+                        <input type="text" class="form-control" id="country" placeholder="Kraj">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="invoice panel panel-default">
+            <div class="panel-heading">Dane do Faktury</div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="form-group col-sm-12">
+                        <input type="checkbox" class="form-control0" id="invoice-aggree">
+                        <label for="invoice-aggree">Tak, chce otrzymać fakturę.</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-5">
+                        <label for="firm-name">Nazwa firmy:</label>
+                        <input type="text" class="form-control" id="firm-name" placeholder="Wprowadź nazwę">
+                    </div>
+                    <div class="form-group col-sm-5">
+                        <label for="firm-str">Ulica:</label>
+                        <input type="text" class="form-control" id="firm-str" placeholder="Wprowadź ulicę">
+                    </div>
+                    <div class="form-group col-sm-2">
+                        <label for="firm-str-number">Numer budynku:</label>
+                        <input type="number" class="form-control" id="firm-str-number" placeholder="00">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-3">
+                        <label for="firm-postal">Kod pocztowy:</label>
+                        <input type="text" class="form-control" id="firm-postal" pattern="[0-9]{2}-[0-9]{3}"
+                            placeholder="00-000">
+                    </div>
+                    <div class="form-group col-sm-5">
+                        <label for="firm-city">Miasto:</label>
+                        <input type="text" class="form-control" id="firm-city" placeholder="Wprowadź miasto">
+                    </div>
+                    <div class="form-group col-sm-4">
+                        <label for="firm-country">Kraj:</label>
+                        <input type="text" class="form-control" id="frim-county" placeholder="Wprowadź kraj">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-sm-5">
+                        <label for="NIP">NIP:</label>
+                        <input type="number" class="form-control" pattern="[0-9]{10}" placeholder="0000000000">
+                    </div>
+                    <div class="form-group col-sm-7">
+                        <label for="remarks">Uwagi do faktury</label>
+                        <input type="text" class="form-control" pattern="[A-za-z]{52}" placeholder="Uwagi na życzenie...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
