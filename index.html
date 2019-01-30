@@ -11,6 +11,7 @@
 </head>
 
 <body>
+    <form>
     <main class="container">
         <div class="row">
             <img src="logo-sm.png" alt="logo hotelu" class="img-responsive logo">
@@ -88,9 +89,8 @@
             <div class="panel-heading">Dane do Faktury</div>
             <div class="panel-body">
                 <div class="row">
-                    <div class="form-group col-sm-12">
-                        <input type="checkbox" class="form-control0" id="invoice-aggree">
-                        <label for="invoice-aggree">Tak, chce otrzymać fakturę.</label>
+                    <div class="checkbox col-sm-12">
+                        <label><input type="checkbox" value="">Tak, chce otrzymać fakturę.</label>
                     </div>
                 </div>
                 <div class="row">
@@ -135,6 +135,24 @@
             </div>
         </div>
     </main>
+    <div class="agrees container-fluid">
+        <div class="row">
+            <div class="checkbox col-sm-12">
+                <label><input type="checkbox">Akceptuję <a href="hotel-rules.pdf">regulamin hotelowy</a></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="checkbox col-sm-12">
+                <label for="agree-data"><input type="checkbox">Wyrarzam zgodę na przetwarzanie moich danych osobowych w
+                    celu zawarcia umowy na usługę hotelową.</label>
+            </div>
+        </div>
+    </div>
+    <div class="data-info panel panel-default">
+        <div class="panel-body text-muted"><small>Bla bla bla</small></div>
+    </div>
+    <button type="submit" class="btn btn-danger btn-lg">Potwierdzić</button>
+    </form>
 </body>
 
 </html>
