@@ -17,11 +17,11 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-        var checkinForm = document.querySelector("#checkin-form");
+        var checkinForm = document.getElementById("checkin-form");
         checkinForm.addEventListener("submit", function (evnt) {
             evnt.preventDefault();
             var personJSON = createJSON(this);
-            document.querySelector("#result") = personJSON;
+            console.log(personJSON);
         }, false);
     });
 })();
