@@ -16,15 +16,14 @@
         return JSON.stringify(person);
     }
 
-    var counter;
+   var counter;
 
     function formValidation () {
         counter = 0;
         var elementsRequired = document.querySelectorAll(".required");
         for (i = 0; i < elementsRequired.length; i++) {
-            if (elementsRequired[i].value) {
-                console.log(1);
-                elementsRequired[i].style.backgroundColor = "red";
+            if (elementsRequired[i].value == false || "on") {
+                elementsRequired[i].style.boxShadow = "inset 0em 0em 0.3em red";
                 counter++;
             } 
         }
