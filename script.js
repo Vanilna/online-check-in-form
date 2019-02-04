@@ -21,9 +21,11 @@
     function formValidation () {
         counter = 0;
         var elementsRequired = document.querySelectorAll(".required");
+        var element;
         for (i = 0; i < elementsRequired.length; i++) {
-            if (elementsRequired[i].value == false || "on") {
-                elementsRequired[i].style.boxShadow = "inset 0em 0em 0.3em red";
+            element = elementsRequired[i];
+            if (element.value == false || "on") {
+                element.style.boxShadow = "inset 0em 0em 0.3em red";
                 counter++;
             } 
         }
@@ -31,6 +33,12 @@
 
     document.addEventListener("DOMContentLoaded", function () {
         var checkinForm = document.getElementById("checkin-form");
+
+        checkinForm.addEventListener("focus", function(e){
+            console.log(1);
+            e.target.style.boxShadow = "";
+        }, true);
+
         checkinForm.addEventListener("submit", function (evnt) {
             evnt.preventDefault();
             formValidation();

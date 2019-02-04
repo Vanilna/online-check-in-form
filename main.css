@@ -44,3 +44,7 @@ span {
     font-weight: 900;
     font-size: 1.5em;
 }
+
+input .required:focus {
+    box-shadow: 0 0 0 white;
+}
