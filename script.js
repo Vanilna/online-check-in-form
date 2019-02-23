@@ -26,7 +26,7 @@
 
         for (i = 0; i < elementsRequired.length; i++) {
             element = elementsRequired[i];
-            if (element.value == false) {
+            if ((element.value == false) || (element.type == "checkbox" && element.checked == false)) {
                 element.style.boxShadow = "inset 0em 0em 0.3em red";
                 counter++;
                 if (counter === 1) {
