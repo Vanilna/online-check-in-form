@@ -26,7 +26,8 @@
 
         for (i = 0; i < elementsRequired.length; i++) {
             element = elementsRequired[i];
-            if ((element.value == false) || (element.type == "checkbox" && element.checked == false)) {
+            if (!(element.value) || (element.type == "checkbox" && element.checked == false)) { //if the first evaluetes to true
+                //it checkes whether the elemnt is checkbox an is it cheked or not
                 element.style.boxShadow = "inset 0em 0em 0.3em red";
                 counter++;
                 if (counter === 1) {
@@ -52,7 +53,6 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-        var checkinForm = document.getElementById("checkin-form");
 
         checkinForm.addEventListener("focus", function (e) {
             e.target.style.boxShadow = "";
