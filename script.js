@@ -38,11 +38,11 @@
 
         if (counter > 0) {
             var rect = firstInvalid.getBoundingClientRect();
-            var bodyPosition = document.querySelector("body").getBoundingClientRect().top;
-            var invalidPosition = Math.abs(bodyPosition - rect.top + 40); //I'm checking how far is the page scrolled 
-            //(what is the position of body), then the difference between this two elements will tell me the distans
+            
+            var invalidPosition = window.pageYOffset + rect.top - 40; //I'm checking how far is the page scrolled 
+            //then add the rect.top (which is negative value), so the difference between this two elements will tell me the distans
             // from the top of the page to first invalid input element
-            //+40 is to be sure that the label of input will be shown too
+            //-40 is to be sure that the label of input will be shown too
 
             scrollOptions = {
                 top: invalidPosition,
@@ -53,6 +53,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
+        var checkinForm = document.getElementById("checkin-form");
 
         checkinForm.addEventListener("focus", function (e) {
             e.target.style.boxShadow = "";
