@@ -16,18 +16,38 @@
         return JSON.stringify(person);
     }
 
-    var counter;
+    var counter; // this var will indicate whether there is some some invalid input or not (if it's 0)
 
     function formValidation() {
         counter = 0;
         var elementsRequired = document.querySelectorAll(".required");
         var element;
+        var firstInvalid;
+
         for (i = 0; i < elementsRequired.length; i++) {
             element = elementsRequired[i];
-            if (element.value == false || "on") {
+            if (element.value == false) {
                 element.style.boxShadow = "inset 0em 0em 0.3em red";
                 counter++;
+                if (counter === 1) {
+                    firstInvalid = element; // I'm saving the first invalid input element to scroll to it after submit
+                }
             }
+        }
+
+        if (counter > 0) {
+            var rect = firstInvalid.getBoundingClientRect();
+            var bodyPosition = document.querySelector("body").getBoundingClientRect().top;
+            var invalidPosition = Math.abs(bodyPosition - rect.top + 40); //I'm checking how far is the page scrolled 
+            //(what is the position of body), then the difference between this two elements will tell me the distans
+            // from the top of the page to first invalid input element
+            //+40 is to be sure that the label of input will be shown too
+
+            scrollOptions = {
+                top: invalidPosition,
+                behavior: "smooth"
+            }
+            window.scrollTo(scrollOptions);
         }
     }
 
@@ -36,13 +56,13 @@
 
         checkinForm.addEventListener("focus", function (e) {
             e.target.style.boxShadow = "";
-        }, true);
+        }, true);//to remove red color when invalid input is clicked to be fulfilled
 
         checkinForm.addEventListener("blur", function (ev) {
             if (ev.target.invalid) {
                 console.log(1);
             }
-        }, true);
+        }, true);//this is not finished jet
 
         checkinForm.addEventListener("submit", function (evnt) {
             evnt.preventDefault();
@@ -50,24 +70,25 @@
             if (counter === 0) {
                 var personJSON = createJSON(this);
                 console.log(personJSON);
-            }
+            }//if there's no more invalid input's (counter === 0), we can submit form.
+            //I don't know backEnd jet, so I'm just printing the result to console
         }, false);
     });
 })();
 
 document.querySelector("#invoceAggree").addEventListener("change", function () {
     var invoice = document.querySelector(".invoice");
-    
 
-    if (this.checked) {
-        var disabled = invoice.querySelectorAll("input[disabled]");
+    if (this.checked) {           //checking if the checkbox of invoiceAgree is checked (if the guest want's an invoice)
+        var disabled = invoice.querySelectorAll("input[disabled]");  //taking all the input elements with disabled argument
         for (i = 0; i < disabled.length; i++) {
-            disabled[i].removeAttribute("disabled");
+            disabled[i].removeAttribute("disabled"); //making them active, so the invoice data can be entered
         }
     } else {
         var toDisable = invoice.querySelectorAll("input");
         for (i = 1; i < toDisable.length; i++) {
-            toDisable[i].setAttribute("disabled", "");
+            toDisable[i].value = "";
+            toDisable[i].setAttribute("disabled", ""); //if the checkbox will be unclicked again, the form will be emptied and disable again
         }
     }
 });
