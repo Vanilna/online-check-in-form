@@ -1,4 +1,6 @@
 (function () {
+    //window.scrollTo(0,40); - this shioul make page go to top, when it's reloaded, but it go up only for a secund and then go back down
+
     function createJSON(form) {
         var person = {};
         var dataElements = document.querySelectorAll("input");
@@ -17,6 +19,7 @@
     }
 
     var counter; // this var will indicate whether there is some some invalid input or not (if it's 0)
+    var checkboxLabel;
 
     function formValidation() {
         counter = 0;
@@ -28,7 +31,11 @@
             element = elementsRequired[i];
             if (!(element.value) || (element.type == "checkbox" && element.checked == false)) { //if the first evaluetes to true
                 //it checkes whether the elemnt is checkbox an is it cheked or not
-                element.style.boxShadow = "inset 0em 0em 0.3em red";
+                if (element.type == "checkbox") {
+                    checkboxLabel = document.querySelector("#" + element.id + " + label");
+                    checkboxLabel.style.border = "0.1em solid #d10a10";
+                }
+                element.style.border = "0.1em solid #d10a10";
                 counter++;
                 if (counter === 1) {
                     firstInvalid = element; // I'm saving the first invalid input element to scroll to it after submit
@@ -55,8 +62,9 @@
     document.addEventListener("DOMContentLoaded", function () {
         var checkinForm = document.getElementById("checkin-form");
 
-        checkinForm.addEventListener("focus", function (e) {
-            e.target.style.boxShadow = "";
+        checkinForm.addEventListener("click", function (e) {//click event instead of focus, 
+            //bocouse my checkboxes are label-imitations ant can't be focused
+            e.target.style.border = "";
         }, true);//to remove red color when invalid input is clicked to be fulfilled
 
         checkinForm.addEventListener("blur", function (ev) {

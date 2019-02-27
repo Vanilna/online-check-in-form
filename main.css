@@ -40,11 +40,46 @@ main {
 }
 
 span {
-    color: red;
+    color: #d10a10;
     font-weight: 900;
     font-size: 1.5em;
 }
 
-input .required:focus {
-    box-shadow: 0 0 0 white;
+.thanks-background {
+    background-color: rgba(100, 100, 100, 0.3);
+}
+
+#agree-rule, #agree-data {
+    display: none;
+}
+
+#agree-rule + label, #agree-data + label {
+    border: 0.1em solid #ddd;
+    background-color: #fff;
+    padding: 0.9%;
+    border-radius: 10%;
+    position: relative;
+    display: inline-block;
+}
+
+#agree-rule + label:active, #agree-rule:checked + label:active, #agree-data + label:active, #agree-data:checked + label:active {
+    box-shadow: inset 0px 0px 0.3em #575756;
+}
+
+#agree-rule + label:hover, #agree-data + label:hover {
+    box-shadow: 0px 0px 0.3em rgba(0, 123, 255, 0.7);
+    border: 0.1em solid #17a2b8;
+}
+
+#agree-rule:checked + label:after, #agree-data:checked + label:after {
+    content: "\2714";
+    font-size: 1.2em;
+    color: #555;
+    position: absolute;
+    top: -10%;
+    left: 20%;
+}
+
+.checkbox label {
+    display: inline;
 }
