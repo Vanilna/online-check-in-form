@@ -77,6 +77,8 @@
             evnt.preventDefault();
             formValidation();
             if (counter === 0) {
+                var modal = document.querySelector(".modal");
+                modal.style.display = "block";
                 var personJSON = createJSON(this);
                 console.log(personJSON);
             }//if there's no more invalid input's (counter === 0), we can submit form.
