@@ -52,7 +52,7 @@ span {
 #agree-rule + label, #agree-data + label {
     border: 0.1em solid #ddd;
     background-color: #fff;
-    padding: 0.9%;
+    padding: 0.7em;
     border-radius: 10%;
     position: relative;
     display: inline-block;

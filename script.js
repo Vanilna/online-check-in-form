@@ -4,17 +4,11 @@
     function createJSON(form) {
         var person = {};
         var dataElements = document.querySelectorAll("input");
-
-        for (i = 0; i < dataElements.length; i++) {
-            var dataElement = dataElements[i];
-            var name = dataElement.name;
-            var value = dataElement.value;
-
-            if (name) {
-                person[name] = value;
+        dataElements.forEach(element => {
+            if (element.name) {
+                person[element.name] = element.value;
             }
-        }
-
+        });
         return JSON.stringify(person);
     }
 
